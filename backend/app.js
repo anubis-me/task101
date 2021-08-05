@@ -17,7 +17,7 @@ app.use(cors());
 app.use("/api", router);
 
 mongoConnect((client) => {
-	const serv = app.listen(process.env.PORT || 4000, (err) => {
+	const serv = app.listen(process.env.PORT || 3000, (err) => {
 		if (err) {
 			console.log(err);
 			process.exit(0);
@@ -30,6 +30,6 @@ mongoConnect((client) => {
 			},
 		});
 
-		console.log("Server is Listening at Port:4000!");
+		console.log("Server is Listening at Port:3000!");
 	});
 });

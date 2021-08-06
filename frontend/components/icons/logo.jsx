@@ -3,7 +3,7 @@ import React from "react";
 function Logo({ className }) {
 	return (
 		<svg
-			xmlns='http://www.w3.org/2000/svg'
+			xmlns='https://cdn.jetcommerce.io/wp-content/uploads/sites/11/2018/03/15145621/Richpanel-Icon-Blue.png'
 			className={className}
 			viewBox='0 0 250 250'>
 			<g id='Richpanel_Logo_Horizontal_Color' transform='translate(-41 -108)'>

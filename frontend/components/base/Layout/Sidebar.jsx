@@ -13,11 +13,12 @@ function Sidebar({ active }) {
 		router.push("/");
 	}
 	return (
-		<div className='sidebar bg-primary bg-opacity-95 h-full fixed flex flex-col justify-between'>
+		<div className='sidebar bg-primary bg-opacity-99 h-full fixed flex flex-col justify-between'>
 			<div>
 				<div className='logo p-5'>
-					<Logo className='h-8 mx-auto'></Logo>
+					<Logo className='h-8 mx-auto'>Home</Logo>
 				</div>
+
 				<div className='menu'>
 					<ul>
 						<Link href='/dashboard/conversations'>
@@ -28,22 +29,7 @@ function Sidebar({ active }) {
 								/>
 							</li>
 						</Link>
-						<Link href='/dashboard'>
-							<li className={active == "users" ? "bg-white py-3" : "py-3"}>
-								<People
-									className='h-8 mx-auto p-1'
-									fill={active == "users" ? "black" : "white"}
-								/>
-							</li>
-						</Link>
-						<Link href='/dashboard'>
-							<li className={active == "charts" ? "bg-white py-3" : "py-3"}>
-								<Chart
-									className='h-8 mx-auto p-1'
-									fill={active == "charts" ? "black" : "white"}
-								/>
-							</li>
-						</Link>
+						
 					</ul>
 				</div>
 			</div>
@@ -56,7 +42,7 @@ function Sidebar({ active }) {
 				<div className='user p-5'>
 					<Link href='/profile'>
 						<img
-							src='https://randomuser.me/api/portraits/men/60.jpg'
+							src='https://cdn.jetcommerce.io/wp-content/uploads/sites/11/2018/03/15145621/Richpanel-Icon-Blue.png'
 							className='h-10 rounded-full mx-auto'
 							alt='user'
 						/>

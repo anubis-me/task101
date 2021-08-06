@@ -5,11 +5,13 @@ import { updateToken } from "../../../api";
 export default NextAuth({
 	providers: [
 		Providers.Facebook({
-			clientId: process.env.APP_ID,
+			clientId	: process.env.APP_ID,
 			clientSecret: process.env.APP_SECRET,
 		}),
 	],
+
 	debug: false && process.env.NODE_ENV === "development",
+	
 	callbacks: {
 		async signIn(user, account, profile) {
 			updateToken(user.email, account.accessToken);
@@ -30,6 +32,7 @@ export default NextAuth({
 			return session;
 		},
 	},
+	//Json web token for safer data transfer
 	session: { jwt: true },
 	jwt: {
 		secret: process.env.JWT_SECRET,

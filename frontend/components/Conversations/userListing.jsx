@@ -9,7 +9,7 @@ function UserListing({ className }) {
 	return (
 		<div className={className + " w-full  h-screen"}>
 			<div className='bar flex justify-between items-center border-gray-300 border-b-1 py-5 px-4'>
-				<span className='font-semibold text-xl'>Conversations</span>
+				<span className='font-semibold text-xl'>Chats</span>
 				<Refresh className='h-6' fill='none' />
 			</div>
 			{convState.length ? (
@@ -39,10 +39,7 @@ function UserListing({ className }) {
 											</div>
 											<div className='elapse col-span-1'>10m</div>
 										</div>
-										<div className='product'>Awesome Product</div>
-										<div className='msg-text text-base text-gray-500 h-5 overflow-hidden'>
-											Hey There! How are you?Wll done Thankdasd sdad
-										</div>
+										
 									</div>
 								</li>
 							);
@@ -50,7 +47,7 @@ function UserListing({ className }) {
 					</ul>
 				</div>
 			) : (
-				<div className='w-full py-10 text-center'>No Conversations</div>
+				<div className='w-full py-10 text-center'>No pending chats</div>
 			)}
 		</div>
 	);

@@ -28,7 +28,7 @@ This app will allow clients to connect their fb accounts, listen to their commen
 * Login using Facebook login id and password
 * Real time chat update with auto refreshing
 * Time stamp to segeregate the messages
-* 
+
 ## Technologies and Third party libraries
 
 A few things to note in the project:

@@ -1,5 +1,8 @@
 import axios from "axios";
 
+//connecting from backend
+
+//to get user profile
 const fetchProfile = async (email, id) => {
 	const res = await axios.get(
 		`http://localhost:8000/api/user/${email}/profile/${id}`,
@@ -8,6 +11,7 @@ const fetchProfile = async (email, id) => {
 	else return {};
 };
 
+//to update the token if expired
 const updateToken = async (email, accessToken) => {
 	const res = await axios.put(
 		`http://localhost:8000/api/user/${email}/accesstoken`,
@@ -20,6 +24,7 @@ const updateToken = async (email, accessToken) => {
 	}
 };
 
+//latest account detail
 const getAccount = async (email) => {
 	const res = await axios.get(
 		`http://localhost:8000/api/user/${email}/accounts`,
@@ -30,6 +35,8 @@ const getAccount = async (email) => {
 	return {};
 };
 
+
+//to send the message to backend
 const sendMessage = async (email, message, recipientId) => {
 	const res = await axios.post(
 		`http://localhost:8000/api/webhook/${email}/send_message`,

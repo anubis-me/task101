@@ -1,3 +1,4 @@
+//secret file
 module.exports = {
 	reactStrictMode: true,
 	env: {

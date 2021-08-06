@@ -29,6 +29,7 @@ const LeftMsg = ({ msg, sender }) => {
 						</span>
 					</div>
 				</div>
+				//Time stamp as asked in the assignment
 				<div className='date-time text-sm text-left'>
 					<span className='font-semibold'>{sender.first_name}</span> -{" "}
 					{moment(msg.time).format("MMM D, h.mm a")}

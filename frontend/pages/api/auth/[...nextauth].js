@@ -1,3 +1,4 @@
+//Creating session between the frontend and backend
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 import { updateToken } from "../../../api";

@@ -1,9 +1,12 @@
+//server main file
 const express = require("express");
-const cors = require("cors");
+const cors    = require("cors");
+// Connecting Database
 const { mongoConnect } = require("./utils/database");
-const router = require("./routes/router");
-const io = require("./utils/sockets");
+const router  = require("./routes/router");
+const io      = require("./utils/sockets");
 
+//importing environment variables
 require("dotenv").config({
 	path: `${__dirname}/.env`,
 });
@@ -14,9 +17,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
+// api the add-on before every route to separate from frontend routes
+
 app.use("/api", router);
 
 mongoConnect((client) => {
+	//.Port to suit the deployment server and 3000 for local server
 	const serv = app.listen(process.env.PORT || 3000, (err) => {
 		if (err) {
 			console.log(err);
@@ -25,11 +31,12 @@ mongoConnect((client) => {
 
 		io.attach(serv, {
 			cors: {
+				//Local host Url
 				origin: "http://localhost:3000",
 				methods: ["GET", "POST"],
 			},
 		});
-
+		//logging in server console
 		console.log("Server is Listening at Port:3000!");
 	});
 });

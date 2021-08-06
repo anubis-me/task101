@@ -15,11 +15,11 @@ exports.getAccounts = async (req, res) => {
 	FB.api("me/accounts", "GET", (_res) => {
 		if (_res.data) {
 			return res.send({
-				msg: "Accounts Fetched",
+				msg: "Accounts details fetched",
 				data: { accounts: _res.data },
 			});
 		} else {
-			return res.send({ msg: "Some Error Occurred" });
+			return res.send({ msg: "Error Occurred" });
 		}
 	});
 };
@@ -30,11 +30,11 @@ exports.getProfile = async (req, res) => {
 	FB.api(`/${id}`, "GET", {}, (_res) => {
 		if (_res) {
 			return res.send({
-				msg: "Details Fetched",
+				msg: "Account details Fetched",
 				data: { details: _res },
 			});
 		} else {
-			return res.status(500).send({ msg: "Some Error Occurred" });
+			return res.status(500).send({ msg: "Error Occurred" });
 		}
 	});
 };

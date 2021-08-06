@@ -1,3 +1,4 @@
+//To verify DataBase connection 
 const mongodb = require("mongodb");
 const MongoClient = mongodb.MongoClient;
 

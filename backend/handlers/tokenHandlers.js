@@ -10,9 +10,9 @@ exports.getToken = async (req, res, next) => {
 			req.token = accessToken;
 			next();
 		} else {
-			return res.send({ msg: "User Does not exist." });
+			return res.send({ msg: "User does not exist." });
 		}
 	} else {
-		return res.send({ msg: "User Does not exist." });
+		return res.send({ msg: "User does not exist." });
 	}
 };

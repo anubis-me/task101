@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const {	verifyWebhook,addWebhook,sendMessage,} = require("../controllers/messengerCtrl");
-const { getDatabase } = require("../handlers/databaseMiddleware");
-const { getPageToken } = require("../handlers/pagetokenhandler");
-const { getToken } = require("../handlers/tokenhandler");
+const { getDatabase } = require("../handlers/databaseHandlers");
+const { getPageToken } = require("../handlers/pageHandlers");
+const { getToken } = require("../handlers/tokenHandlers");
 
 router.post("/", addWebhook);
 router.get("/", verifyWebhook);

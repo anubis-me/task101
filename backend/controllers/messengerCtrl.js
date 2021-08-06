@@ -1,7 +1,9 @@
+//linking utilities
 const io     = require("../utils/sockets");
 const client = require("../utils/redis");
 const { FB } = require("fb");
 
+//connecting with fb posts
 exports.addWebhook = async (req, res) => {
 	let body = req.body;
 	if (body.object === "page") {
@@ -16,12 +18,15 @@ exports.addWebhook = async (req, res) => {
 			} else console.log(entry.changes);
 		});
 
+		//logging the success
 		res.status(200).send("EVENT_RECEIVED");
 	} else {
 		res.sendStatus(404);
 	}
 };
 
+
+//verifying the status of the user active/inactive
 exports.verifyWebhook = async (req, res) => {
 	let VERIFY_TOKEN = process.env.WEBHOOK_TOKEN;
 	let mode = req.query["hub.mode"];
@@ -38,6 +43,7 @@ exports.verifyWebhook = async (req, res) => {
 	}
 };
 
+//to send message on the post
 exports.sendMessage = async (req, res) => {
 	const { recipientId, message } = req.body;
 	console.log(req.body);
@@ -56,8 +62,10 @@ exports.sendMessage = async (req, res) => {
 		},
 		(_res) => {
 			if (_res) {
+				//if the message is delivered successfully
 				return res.status(200).send({ msg: "Message Delieverd" });
 			} else {
+				//logging the error if occurred
 				return res.status(500).send({ msg: "Error occured in sending message" });
 			}
 		},

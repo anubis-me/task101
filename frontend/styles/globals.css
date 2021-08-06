@@ -1,7 +1,7 @@
-//global css file you can change theme from yellow to white here
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+//global css file you can change theme from yellow to white here
 
 html,
 body {

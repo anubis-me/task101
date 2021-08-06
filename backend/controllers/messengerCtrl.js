@@ -26,7 +26,7 @@ exports.addWebhook = async (req, res) => {
 };
 
 
-//verifying the status of the user active/inactive
+//verifying the callback from the facebook developer portal to link webhooks
 exports.verifyWebhook = async (req, res) => {
 	let VERIFY_TOKEN = process.env.WEBHOOK_TOKEN;
 	let mode = req.query["hub.mode"];

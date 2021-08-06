@@ -1,5 +1,6 @@
 const { FB } = require("fb");
 
+//fetching user data
 exports.getUser = async (req, res) => {
 	const { email } = req.params;
 	const { _id, ...user } = await req.db.collection("users").findOne({ email });
@@ -10,6 +11,7 @@ exports.getUser = async (req, res) => {
 	}
 };
 
+//accounts details fetching
 exports.getAccounts = async (req, res) => {
 	FB.setAccessToken(req.token);
 	FB.api("me/accounts", "GET", (_res) => {
@@ -24,6 +26,7 @@ exports.getAccounts = async (req, res) => {
 	});
 };
 
+//To get profile data
 exports.getProfile = async (req, res) => {
 	const { id } = req.params;
 	FB.setAccessToken(req.pageToken);
@@ -34,6 +37,7 @@ exports.getProfile = async (req, res) => {
 				data: { details: _res },
 			});
 		} else {
+			//error handling
 			return res.status(500).send({ msg: "Error Occurred" });
 		}
 	});

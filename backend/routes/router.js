@@ -10,6 +10,7 @@ router.use("/ping", (req, res) => {
 	res.status(200).send({ msg: "Server has started and is running" });
 });
 
+//naming the messenger routes
 router.use("/user", clientRouter);
 router.use("/webhook", messengerRouter);
 

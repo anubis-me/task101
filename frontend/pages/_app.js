@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { Provider } from "next-auth/client";
+import { Provider }   from "next-auth/client";
 import { RecoilRoot } from "recoil";
 
 function MyApp({ Component, pageProps }) {

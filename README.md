@@ -68,6 +68,16 @@ Refer these documents for development
 
 I did my best to complete this work in after work hours. There is a lot of room for improvement.
 
+## Stones left unturned
+
+* **[webhook]()** - linking of the callback from facebook developer page to deployed server because of that chatting is not functional though the code is complete and only bugs are needed to be fixed. 
+* **[comments fetching]()** - I couldn't touch the comments part because of lack of time.
+* Docker - Docker script to start service in production mode.
+* **[sending message]()** - Coding and integration is done as well as the UI. Only webhook callback is stopping this.
+* **[Chat](#)** - UI and coding done but not compatible on development mode as of now. 
+* **[Responsiveness]()** - ] It's not using media queries as of now.
+
+
 ## Contributors
 
 <table>

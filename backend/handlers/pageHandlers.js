@@ -1,5 +1,6 @@
 const { FB } = require("fb");
 
+//to fetch token
 exports.getPageToken = async (req, res, next) => {
 	FB.setAccessToken(req.token);
 	FB.api("me/accounts", "GET", (_res) => {

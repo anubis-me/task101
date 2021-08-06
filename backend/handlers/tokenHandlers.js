@@ -1,3 +1,4 @@
+//to find and verify registered user
 exports.getToken = async (req, res, next) => {
 	const { email } = req.params;
 	const { _id, ...user } = await req.db.collection("users").findOne({ email });

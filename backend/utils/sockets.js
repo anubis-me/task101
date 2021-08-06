@@ -1,3 +1,4 @@
+//To initiate socket connection 
 const io = require("socket.io")();
 const client = require("./redis");
 

@@ -23,7 +23,7 @@ app.use("/api", router);
 
 mongoConnect((client) => {
 	//.Port to suit the deployment server and 3000 for local server
-	const serv = app.listen(process.env.PORT || 3000, (err) => {
+	const serv = app.listen(process.env.PORT || 8000, (err) => {
 		if (err) {
 			console.log(err);
 			process.exit(0);
@@ -37,6 +37,6 @@ mongoConnect((client) => {
 			},
 		});
 		//logging in server console
-		console.log("Server is Listening at Port:3000!");
+		console.log("Server is Listening at Port:8000!");
 	});
 });

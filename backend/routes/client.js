@@ -1,11 +1,11 @@
 const express = require("express");
-const { updateToken } = require("../controllers/tokenController");
+const { updateToken } = require("../controllers/tokenCtrl");
 const router = express.Router();
-const userController = require("../controllers/userController");
+const userController = require("../controllers/userCtrl");
 
-const { getDatabase } = require("../middlewares/databaseMiddleware");
-const { getToken } = require("../middlewares/tokenMiddleware");
-const { getPageToken } = require("../middlewares/pageTokenMiddleware");
+const { getDatabase } = require("../handlers/databaseHanlders");
+const { getToken } = require("../handlers/tokenHandlers");
+const { getPageToken } = require("../handlers/pageHandlers");
 
 router.get(
 	"/:email/profile/:id",

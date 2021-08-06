@@ -32,7 +32,7 @@ const getAccount = async (email) => {
 
 const sendMessage = async (email, message, recipientId) => {
 	const res = await axios.post(
-		`http://localhost:4000/api/webhook/${email}/send_message`,
+		`http://localhost:8000/api/webhook/${email}/send_message`,
 		{
 			recipientId,
 			message,

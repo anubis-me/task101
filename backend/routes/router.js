@@ -11,6 +11,6 @@ router.use("/ping", (req, res) => {
 });
 
 router.use("/user", clientRouter);
-router.use("/messenger", messengerRouter);
+router.use("/webhook", messengerRouter);
 
 module.exports = router;

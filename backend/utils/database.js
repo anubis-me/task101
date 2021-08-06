@@ -4,12 +4,12 @@ const MongoClient = mongodb.MongoClient;
 let _db;
 
 const mongoConnect = (cb) => {
-	MongoClient.connect(process.env.MONGO_URI, {
+	MongoClient.connect(process.env.MONGO_URL, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
 		.then((client) => {
-			if (client) console.log("Connected to Database");
+			if (client) console.log("Connected to DB");
 			_db = client.db();
 			cb();
 		})
@@ -21,7 +21,7 @@ const mongoConnect = (cb) => {
 
 const getDb = () => {
 	if (_db) return _db;
-	throw "Database not Connected";
+	throw "DB not Connected";
 };
 
 module.exports = { mongoConnect, getDb };

@@ -1,4 +1,4 @@
-const io = require("../utils/sockets");
+const io     = require("../utils/sockets");
 const client = require("../utils/redis");
 const { FB } = require("fb");
 

@@ -1,7 +1,5 @@
   <!-- Dependency Status -->
-<h1 align="center">
-  <a href="https://github.com/anubis-me/task101"><img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.jetcommerce.io%2Fwp-content%2Fuploads%2Fsites%2F11%2F2018%2F04%2F15150526%2FHigh-Res-Logo-Icon-Blue.png&imgrefurl=https%3A%2F%2Frichpanel.com%2F&tbnid=zXmk6HthgOKTEM&vet=12ahUKEwiC5IPzvZ3yAhWMXn0KHTcwA_IQMygBegUIARCcAQ..i&docid=Pr-LHzSR8O5w3M&w=500&h=500&q=richpanel&ved=2ahUKEwiC5IPzvZ3yAhWMXn0KHTcwA_IQMygBegUIARCcAQ" width=230 alt="Spider"></a>
-</h1>
+
 
 
 <p align="center">

@@ -10,7 +10,7 @@ router.use("/ping", (req, res) => {
 	res.status(200).send({ msg: "Server has started and is running" });
 });
 
-router.use("/client", clientRouter);
+router.use("/user", clientRouter);
 router.use("/messenger", messengerRouter);
 
 module.exports = router;

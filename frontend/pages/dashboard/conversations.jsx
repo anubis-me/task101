@@ -34,8 +34,9 @@ const Conversations = () => {
 	}, [session]);
 
 	React.useEffect(async () => {
-		if (session && Object.keys(page).length) {
-			socket = io("localhost:4000");
+		
+		if (page && session && Object.keys(page).length) {
+			socket = io("localhost:8000");
 			configureSocket();
 		}
 	}, [session, page]);

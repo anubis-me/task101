@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { pageState, profileState } from "../../atoms/atom";
 import Sidebar from "../../components/base/Layout/Sidebar";
+import Conversations from  "./conversations"
 import { getAccount, getProfile } from "../../api";
 
 function Dashboard() {
@@ -23,6 +24,7 @@ function Dashboard() {
 	return (
 		<div>
 			<Sidebar active={active} setActive={setActive} />
+			<Conversations />
 		</div>
 	);
 }

@@ -1,5 +1,5 @@
   <!-- Dependency Status -->
-
+<h3> Frontend Deployment Link :https://ricfront.vercel.app/</h3>
 <h3> Backend Deployment Link : https://testt222222.herokuapp.com/</h3>
 
 <p align="center">

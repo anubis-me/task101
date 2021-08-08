@@ -1,17 +1,18 @@
 import React from "react";
-import Sidebar from "../../components/base/Layout/Sidebar";
-import UserListing from "../../components/Conversations/userListing";
-import Conversation from "../../components/Conversations/Conversation";
-import SenderProfile from "../../components/Conversations/senderProfile";
+import Sidebar 		  from "../../components/base/Layout/Sidebar";
+import UserListing    from "../../components/Conversations/userListing";
+import Conversation   from "../../components/Conversations/Conversation";
+import SenderProfile  from "../../components/Conversations/senderProfile";
 import { io } from "socket.io-client";
-import { useSession } from "next-auth/client";
+import { useSession, getSession } from "next-auth/client";
 import { useRecoilState, useRecoilValue } from "recoil";
 import {
 	activeConvState,
 	conversationState,
 	pageState,
 	profileState,
-} from "../../atoms/atom";
+} 
+from "../../atoms/atom";
 import { setConv, setSendConv } from "../../utils/helpers";
 import { fetchProfile, getAccount, getProfile } from "../../api";
 
@@ -34,29 +35,28 @@ const Conversations = () => {
 	}, [session]);
 
 	React.useEffect(async () => {
-		
-		if (page && session && Object.keys(page).length) {
+		if (page && session && Object.keys(page).length) 
+		{
 			socket = io("localhost:8000");
-			configureSocket();
-		}
-	}, [session, page]);
-
-	const configureSocket = () => {
-		socket.on("connect", () => {
+			socket.on("connect", () => {
 			socket.emit("/init", { pageId: page.id });
-		});
-		socket.on("connect_error", (err) => {
+			});
+			socket.on("connect_error", (err) => {
 			console.error(err);
 		});
-		const newmsgCb = async (data) => {
-			const user = await fetchProfile(session.user.email, data.event.sender.id);
+
+			const newmsgCb = async (data) => {
+			const user = await fetchProfile(session.user.email, data.sender.id);
 			setConvState((convState) =>
-				setConv(convState, data.event, user.data.data.details),
+				setConv(convState, data, user.data.data.details),
 			);
 		};
 		socket.on("/new_message", newmsgCb);
-	};
+		}
+	}
+	, [session, page]);
 
+	
 	return (
 		<div className=''>
 			<Sidebar active='conv' />

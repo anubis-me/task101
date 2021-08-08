@@ -7,14 +7,14 @@ import Conversations from  "./conversations"
 import { getAccount, getProfile } from "../../api";
 
 function Dashboard() {
-	const [session, loading] = useSession();
+	const [session, loading]  = useSession();
 	const [active, setActive] = useState("");
-	const [page, setPage] = useRecoilState(pageState);
+	const [page, setPage]     = useRecoilState(pageState);
 	const [profile, setProfile] = useRecoilState(profileState);
 	React.useEffect(async () => {
 		if (session) {
 			const accounts = await getAccount(session.user.email);
-			// console.log(accounts.data.data.accounts[0]);
+			console.log(accounts.data.data.accounts[0]);
 			setPage(accounts.data.data.accounts[0]);
 			const profile = await getProfile(session.user.email);
 			const user = profile.data.data.user;

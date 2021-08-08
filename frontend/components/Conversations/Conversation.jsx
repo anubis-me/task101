@@ -18,7 +18,7 @@ const LeftMsg = ({ msg, sender }) => {
 				<div className='grid grid-cols-11 items-end  justify-end'>
 					<div className='sender-img col-span-2 flex justify-start'>
 						<img
-							src={sender.profile_pic}
+							src={"https://scontent.fdel11-1.fna.fbcdn.net/v/t1.6435-1/cp0/p60x60/106285171_3505469982807654_1685171694798644907_n.jpg?_nc_cat=102&ccb=1-4&_nc_sid=1eb0c7&_nc_ohc=37KnmTdbICoAX_05EXl&_nc_ht=scontent.fdel11-1.fna&oh=b7d14fee545a37f635f6b2fa8536ce42&oe=61362B97"}
 							alt='sender-img'
 							className='rounded-full h-9'
 						/>
@@ -29,9 +29,8 @@ const LeftMsg = ({ msg, sender }) => {
 						</span>
 					</div>
 				</div>
-				//Time stamp as asked in the assignment
 				<div className='date-time text-sm text-left'>
-					<span className='font-semibold'>{sender.first_name}</span> -{" "}
+					<span className='font-semibold'>{sender.name}</span> -{" "}
 					{moment(msg.time).format("MMM D, h.mm a")}
 				</div>
 			</div>
@@ -82,6 +81,7 @@ function Conversation({ className }) {
 		}));
 	}, [convState]);
 
+	//sending messages
 	const sendMsg = async (email, msg, id) => {
 		await sendMessage(email, msg, id);
 		setConvState((convState) => setSendConv(convState, msg, id));

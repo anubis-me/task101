@@ -14,6 +14,7 @@ exports.getUser = async (req, res) => {
 //accounts details fetching
 exports.getAccounts = async (req, res) => {
 	FB.setAccessToken(req.token);
+	console.log(req.token);
 	FB.api("me/accounts", "GET", (_res) => {
 		if (_res.data) {
 			return res.send({
@@ -25,6 +26,13 @@ exports.getAccounts = async (req, res) => {
 		}
 	});
 };
+
+exports.getAccountsfromemail = async (req, res) => {
+
+		return res.send({"manan":"annd"});
+		
+};
+
 
 //To get profile data
 exports.getProfile = async (req, res) => {

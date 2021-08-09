@@ -16,12 +16,12 @@ function Sidebar({ active }) {
 		<div className='sidebar bg-primary bg-opacity-99 h-full fixed flex flex-col justify-between'>
 			<div>
 				<div className='logo p-5'>
-					<Logo className='h-8 mx-auto'>Home</Logo>
+					<Logo className='h-8 mx-auto'>Dashboard</Logo>
 				</div>
 
 				<div className='menu'>
 					<ul>
-						<Link href='/dashboard/conversations'>
+						<Link href='/dashboard/messaging'>
 							<li className={active == "conv" ? "bg-white py-3" : "py-3"}>
 								<Chats
 									className='h-8 mx-auto p-1'

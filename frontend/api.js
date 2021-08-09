@@ -8,6 +8,17 @@ const fetchProfile = async (email, id) => {
 	else return {};
 };
 
+const getAccount = async (email) => {
+	const res = await axios.get(
+		`http://localhost:8000/api/user/${email}/accounts`,
+	);
+	if (res) {
+		return res;
+	}
+	return {};
+};
+
+
 const updateToken = async (email, accessToken) => {
 	const res = await axios.put(
 		`http://localhost:8000/api/user/${email}/accesstoken`,
@@ -20,16 +31,16 @@ const updateToken = async (email, accessToken) => {
 	}
 };
 
-const getAccount = async (email) => {
-	const res = await axios.get(
-		`http://localhost:8000/api/user/${email}/accounts`,
-	);
+
+export { updateToken, getAccount, fetchProfile, sendMessage };
+
+export const getProfile = async (email) => {
+	const res = await axios.get(`http://localhost:8000/api/user/${email}/me`);
 	if (res) {
 		return res;
 	}
 	return {};
 };
-
 
 const sendMessage = async (email, message, recipientId) => {
 	const res = await axios.post(
@@ -44,12 +55,4 @@ const sendMessage = async (email, message, recipientId) => {
 	}
 };
 
-export { updateToken, getAccount, fetchProfile, sendMessage };
 
-export const getProfile = async (email) => {
-	const res = await axios.get(`http://localhost:8000/api/user/${email}/me`);
-	if (res) {
-		return res;
-	}
-	return {};
-};

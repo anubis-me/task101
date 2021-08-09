@@ -49,7 +49,7 @@ function UserListing({ className }) {
 					</ul>
 				</div>
 			) : (
-				<div className='w-full py-10 text-center'>No pending chats</div>
+				<div className='w-full py-10 text-center'>No unread chats</div>
 			)}
 		</div>
 	);

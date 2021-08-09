@@ -2,6 +2,7 @@
 exports.getToken = async (req, res, next) => {
 	const { email } = req.params;
 	const { _id, ...user } = await req.db.collection("users").findOne({ email });
+	console.log({...user});
 	if (user) {
 		const { accessToken } = await req.db
 			.collection("accounts")

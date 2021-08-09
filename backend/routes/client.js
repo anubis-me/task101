@@ -21,6 +21,7 @@ router.get(
 router.get("/:email/me", getDatabase, userController.getUser);
 
 //to send account data
+
 router.get(
 	"/:email/accounts",
 	getDatabase,

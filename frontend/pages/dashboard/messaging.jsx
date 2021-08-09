@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar 		  from "../../components/base/Layout/Sidebar";
 import UserListing    from "../../components/Conversations/userListing";
-import Conversation   from "../../components/Conversations/Conversation";
+import Conversation   from "../../components/Conversations/Messaging";
 import SenderProfile  from "../../components/Conversations/senderProfile";
 import { io } from "socket.io-client";
 import { useSession, getSession } from "next-auth/client";

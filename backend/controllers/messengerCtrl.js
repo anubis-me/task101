@@ -1,6 +1,6 @@
 //linking utilities
 const io     = require("../utils/sockets");
-const client = require("../utils/redis");
+//const client = require("../utils/redis");
 const { FB } = require("fb");
 
 //connecting with fb posts
@@ -10,14 +10,10 @@ exports.addWebhook = async (req, res) => {
 		body.entry.forEach(function (entry) {
 			if (entry.messaging) {
 				let webhook_event = entry.messaging[0];
-				client.get(webhook_event.recipient.id, (err, val) => {
-					io.to(val).emit("/new_message", {
-						event: webhook_event,
-					});
-				});
+//				console.log(webhook_event.recipient.id);
+				io.emit("/new_message", webhook_event);
 			} else console.log(entry.changes);
 		});
-
 		//logging the success
 		res.status(200).send("EVENT_RECEIVED");
 	} else {
@@ -32,7 +28,7 @@ exports.verifyWebhook = async (req, res) => {
 	let mode = req.query["hub.mode"];
 	let token = req.query["hub.verify_token"];
 	let challenge = req.query["hub.challenge"];
-
+	console.log("verifuy" + mode);
 	if (mode && token) {
 		if (mode === "subscribe" && token === VERIFY_TOKEN) {
 			console.log("WEBHOOK_VERIFIED");
